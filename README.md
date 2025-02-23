@@ -1,6 +1,77 @@
-# COTURN Server Setup Script
+# Simple COTURN Server Setup Script
 
 A bash script for easy installation and configuration of a COTURN server. This script helps you set up a STUN/TURN server with basic authentication and no SSL.
+
+## Use Cases
+
+This STUN/TURN server can be used in various WebRTC applications and VoIP solutions:
+
+### WebRTC Applications
+- Video conferencing applications
+- Peer-to-peer file sharing
+- Live streaming solutions
+- Browser-based chat applications
+- Online gaming platforms
+- Remote desktop applications
+
+### VoIP Solutions
+- SIP clients (JsSIP, SIP.js)
+- WebRTC-based softphones
+- VoIP mobile applications
+- IP PBX systems
+- Video calling applications
+
+### Frameworks & Libraries
+Can be integrated with:
+- JsSIP
+- SIP.js
+- WebRTC.js
+- Janus Gateway
+- FreeSWITCH
+- Asterisk
+- Kamailio
+- OpenSIPS
+
+### Example Integration with JsSIP
+
+```javascript
+let socket = new JsSIP.WebSocketInterface('wss://your-websocket-server');
+let configuration = {
+  sockets  : [ socket ],
+  uri      : 'sip:your_extension@your-sip-domain',
+  password : 'your-password',
+  iceServers: [
+    { urls: ['stun:your-ip:3478'] },
+    {
+      urls: ['turn:your-ip:3478'],
+      username: 'your-turn-username',
+      credential: 'your-turn-password'
+    }
+  ]
+};
+
+let phone = new JsSIP.UA(configuration);
+phone.start();
+```
+
+### Example Integration with WebRTC
+
+```javascript
+const configuration = {
+  iceServers: [
+    {
+      urls: "stun:your-ip:3478"
+    },
+    {
+      urls: "turn:your-ip:3478",
+      username: "your-turn-username",
+      credential: "your-turn-password"
+    }
+  ]
+};
+
+const pc = new RTCPeerConnection(configuration);
+```
 
 ## Features
 
