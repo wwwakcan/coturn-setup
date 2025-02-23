@@ -21,7 +21,7 @@ A bash script for easy installation and configuration of a COTURN server. This s
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/coturn-setup.git
+git clone https://github.com/wwwakcan/coturn-setup.git
 ```
 
 2. Make the script executable:
