@@ -46,6 +46,11 @@ let configuration = {
       urls: ['turn:your-ip:3478'],
       username: 'your-turn-username',
       credential: 'your-turn-password'
+    },
+    {
+      urls: ['stun:your-ip:3478'],
+      username: 'your-turn-username',
+      credential: 'your-turn-password'
     }
   ]
 };
@@ -66,6 +71,11 @@ const configuration = {
       urls: "turn:your-ip:3478",
       username: "your-turn-username",
       credential: "your-turn-password"
+    },
+    {
+      urls: ['stun:your-ip:3478'],
+      username: 'your-turn-username',
+      credential: 'your-turn-password'
     }
   ]
 };
